@@ -16,7 +16,7 @@ using namespace std;
 using namespace cocos2d;
 using namespace cocos2d::ui;
 
-/* ÊÀ½çÃû×Ö */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 enum class WorldName
 {
 	Mordern = 0,
@@ -25,14 +25,14 @@ enum class WorldName
 	FrostibiteCaves
 };
 
-/* ÓÃ»§Ñ¡ÔñµÄ¿¨ÅÆ´æ´¢ */
+/* ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½Ä¿ï¿½ï¿½Æ´æ´¢ */
 struct UserSelectCard
 {
-	Button* cardbutton;     //¿¨ÅÆ°´Å¥
-	int cardTag;            //¿¨ÅÆµÄ±àºÅ
+	Button* cardbutton;     //ï¿½ï¿½ï¿½Æ°ï¿½Å¥
+	int cardTag;            //ï¿½ï¿½ï¿½ÆµÄ±ï¿½ï¿½
 };
 
-/* ÊÀ½ç¹Ø¿¨ */
+/* ï¿½ï¿½ï¿½ï¿½Ø¿ï¿½ */
 struct WorldData
 {
 	WorldData()
@@ -40,9 +40,9 @@ struct WorldData
 		isBeginShowEggs(false),
 		isReadWoldInformation(false)
 	{}
-	int levels;                      // µ±Ç°ÊÀ½çµ±Ç°×î¸ß¹Ø¿¨Êý
+	int levels;                      // ï¿½ï¿½Ç°ï¿½ï¿½ï¿½çµ±Ç°ï¿½ï¿½ß¹Ø¿ï¿½ï¿½ï¿½
 	bool isBeginShowEggs;
-	bool isReadWoldInformation;      // ÊÇ·ñ¶ÁÈ¡ÊÀ½çÐÅÏ¢
+	bool isReadWoldInformation;      // ï¿½Ç·ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 };
 
 class UserInformation
@@ -128,6 +128,7 @@ public:
 	static string getNewEditionName(bool dot = false);
 	static bool getUpdateRequired();
 	static void setUpdateRequired(const bool update);
+    typedef unsigned long DWORD;
 	static DWORD getScreenDisplayFrequency();
 
 CC_CONSTRUCTOR_ACCESS:
@@ -135,59 +136,59 @@ CC_CONSTRUCTOR_ACCESS:
 	~UserInformation();
 
 private:
-	vector<UserSelectCard> _userSelectCard;              // ÓÃ»§Ò»´Î´³¹ØËùÑ¡Ö²Îï
-	vector<WorldData*> _userSelectWorldData;             // ÓÃ»§ËùÑ¡ÊÀ½çÓÎÏ·Êý¾Ý
+	vector<UserSelectCard> _userSelectCard;              // ï¿½Ã»ï¿½Ò»ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡Ö²ï¿½ï¿½
+	vector<WorldData*> _userSelectWorldData;             // ï¿½Ã»ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
 
-	WorldName _selectWorldName;                          // ËùÑ¡ÊÀ½ç
+	WorldName _selectWorldName;                          // ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½
 
-	CheckBox::EventType _showInformation;                // ÏÔÊ¾fps
-	CheckBox::EventType _highFPS;                        // ¸ßÖ¡ÂÊ
-	CheckBox::EventType _fullScreen;                     // È«ÆÁ
-	CheckBox::EventType _cursorNotHide;                  // Êó±êÒþ²Ø
-	CheckBox::EventType _stretchingShow;                 // À­ÉìÏÔÊ¾
-	CheckBox::EventType _easeAnimation;                  // »ºÈë¶¯»­
-	CheckBox::EventType _verticalSynchronization;        // ´¹Ö±Í¬²½
+	CheckBox::EventType _showInformation;                // ï¿½ï¿½Ê¾fps
+	CheckBox::EventType _highFPS;                        // ï¿½ï¿½Ö¡ï¿½ï¿½
+	CheckBox::EventType _fullScreen;                     // È«ï¿½ï¿½
+	CheckBox::EventType _cursorNotHide;                  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	CheckBox::EventType _stretchingShow;                 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
+	CheckBox::EventType _easeAnimation;                  // ï¿½ï¿½ï¿½ë¶¯ï¿½ï¿½
+	CheckBox::EventType _verticalSynchronization;        // ï¿½ï¿½Ö±Í¬ï¿½ï¿½
 
-	map<string, spSkeletonData*> _animationData;         // ¶¯»­´æ´¢
-	map<string, string> _gameText;                       // ÓÎÏ·ÎÄ±¾
-	map<string, string> _imagesPath;                     // Í¼Æ¬Â·¾¶
-	map<string, string> _musicsPath;                     // ÒôÀÖÂ·¾¶ 
-	map<string, string> _animationPath;                  // ¶¯»­Â·¾¶
-	map<string, string> _textPath;                       // ÎÄ±¾Â·¾¶
+	map<string, spSkeletonData*> _animationData;         // ï¿½ï¿½ï¿½ï¿½ï¿½æ´¢
+	map<string, string> _gameText;                       // ï¿½ï¿½Ï·ï¿½Ä±ï¿½
+	map<string, string> _imagesPath;                     // Í¼Æ¬Â·ï¿½ï¿½
+	map<string, string> _musicsPath;                     // ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ 
+	map<string, string> _animationPath;                  // ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
+	map<string, string> _textPath;                       // ï¿½Ä±ï¿½Â·ï¿½ï¿½
 
 	bool _isReadFileLevelData;
-	bool _isUpdate;                                      // Ãû×ÖÊÇ·ñ¸üÐÂ
-	string _userName;                                    // ÓÃ»§Ãû×Ö
-	string _userCaveFileName[8];                         // ÓÃ»§×Ô¼º¶¨Òå´æµµÃû³Æ£¨Ö÷ÒªÓÃÓÚÏÔÊ¾£©
-	string _userCaveFileNameKey[8];                      // ÓÃ»§´æµµkey
-	string _systemCaveFileName[8];                       // ÏµÍ³¶¨Òå´æµµÃû³Æ£¨ÓÃÓÚ´æÈ¡£¬·ÀÖ¹ÓÃ»§¶¨ÒåµÄÎª¿Õ)
-	string _systemCaveFileName_difficult[8];             // ÏµÍ³¶¨ÒåÀ§ÄÑ´æµµÃû³Æ£¨ÓÃÓÚ´æÈ¡£¬·ÀÖ¹ÓÃ»§¶¨ÒåµÄÎª¿Õ)
+	bool _isUpdate;                                      // ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
+	string _userName;                                    // ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+	string _userCaveFileName[8];                         // ï¿½Ã»ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½æµµï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½
+	string _userCaveFileNameKey[8];                      // ï¿½Ã»ï¿½ï¿½æµµkey
+	string _systemCaveFileName[8];                       // ÏµÍ³ï¿½ï¿½ï¿½ï¿½æµµï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½Ú´ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½)
+	string _systemCaveFileName_difficult[8];             // ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´æµµï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½Ú´ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½)
 
-	float _soundEffectVolume;                            // ÒôÐ§
-	float _backGroundMusicVolume;                        // ÒôÀÖ
+	float _soundEffectVolume;                            // ï¿½ï¿½Ð§
+	float _backGroundMusicVolume;                        // ï¿½ï¿½ï¿½ï¿½
 	list<int>_backGroundMusic;
 
-	int _userCaveFileNumber;                             // ÓÃ»§ÓÎÏ·´æµµ±àºÅ 
+	int _userCaveFileNumber;                             // ï¿½Ã»ï¿½ï¿½ï¿½Ï·ï¿½æµµï¿½ï¿½ï¿½ 
 
-	int _killZombiesNumbers;                             // É±ËÀ½©Ê¬×ÜÊý 
-	int _usePlantsNumbers;                               // Ê¹ÓÃÖ²ÎïÊýÁ¿ 
-	int _breakThroughNumbers;                            // ´³¹ØÊ§°Ü´ÎÊý
+	int _killZombiesNumbers;                             // É±ï¿½ï¿½ï¿½ï¿½Ê¬ï¿½ï¿½ï¿½ï¿½ 
+	int _usePlantsNumbers;                               // Ê¹ï¿½ï¿½Ö²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	int _breakThroughNumbers;                            // ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü´ï¿½ï¿½ï¿½
 
-	int _sunNumbers;                                     // Ñô¹âÊý 
-	int _coinNumbers;                                    // ½ð±ÒÊý
-	int _nowFps;                                         // µ±Ç°fps
-	bool _mainToWorld;                                   // ±ê¼ÇÖ÷²Ëµ¥µ½ÊÀ½ç
-	bool _isShowEggs;                                    // ÊÇ·ñÏÔÊ¾²Êµ°
-	bool _isMirrorScene;                                 // ÊÇ·ñ¾µÏñÊÀ½ç
+	int _sunNumbers;                                     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	int _coinNumbers;                                    // ï¿½ï¿½ï¿½ï¿½ï¿½
+	int _nowFps;                                         // ï¿½ï¿½Ç°fps
+	bool _mainToWorld;                                   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	bool _isShowEggs;                                    // ï¿½Ç·ï¿½ï¿½ï¿½Ê¾ï¿½Êµï¿½
+	bool _isMirrorScene;                                 // ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	int _currentPlayLevels;                              // µ±Ç°¹ØÊý
-	int _gameDifficulty;                                 // ÓÎÏ·ÄÑ¶È
-	int _currentPlayWorldTag;                            // µ±Ç°ÊÀ½ç±àºÅ 
-	Sprite* _background;                                 // µ±Ç°ÊÀ½çµØÍ¼ 
-	string _currentPlayWorldName;                        // µ±Ç°ÊÀ½çÃû×Ö
+	int _currentPlayLevels;                              // ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
+	int _gameDifficulty;                                 // ï¿½ï¿½Ï·ï¿½Ñ¶ï¿½
+	int _currentPlayWorldTag;                            // ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	Sprite* _background;                                 // ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ 
+	string _currentPlayWorldName;                        // ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	const static string _clientEdition;                  // µ±Ç°¿Í»§¶Ë°æ±¾
-	static string _editionName;                          // °æ±¾Ãû³Æ
-	static bool _updateRequired;                         // ÊÇ·ñÐèÒª¸üÐÂ
-	static DWORD _screenDisplayFrequency;                // ÆÁÄ»Ë¢ÐÂÂÊ
+	const static string _clientEdition;                  // ï¿½ï¿½Ç°ï¿½Í»ï¿½ï¿½Ë°æ±¾
+	static string _editionName;                          // ï¿½æ±¾ï¿½ï¿½ï¿½ï¿½
+	static bool _updateRequired;                         // ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½
+	static DWORD _screenDisplayFrequency;                // ï¿½ï¿½Ä»Ë¢ï¿½ï¿½ï¿½ï¿½
 };

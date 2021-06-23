@@ -27,7 +27,7 @@
  */
 
 #define LOG_TAG "mp3reader"
-
+#include <cstring>
 #include <stdlib.h>
 #include <assert.h>
 #include <stdint.h>
